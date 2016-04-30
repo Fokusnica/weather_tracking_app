@@ -1,0 +1,37 @@
+<div class="ui container">
+  <div class="ui three column grid">
+    <div class="row">
+      <div class="column"></div>
+      <div class="column">
+        <h2 class="ui teal header centered"> Login:</h2>
+        <%= form_for(@form, url: sessions_sign_in_path, method: :post, html: {class: 'ui large form'}, as: :session) do |f| %>
+            <div class="ui container">
+              <div class="field ui left icon input fluid">
+                <i class="user icon"></i>
+                <%= f.text_field :email, placeholder: "Email", label: false %>
+              </div>
+              <div class="field ui left icon input fluid">
+                <i class="lock icon"></i>
+                <%= f.password_field :password, placeholder: "Password", label: false %>
+              </div>
+
+              <div>
+                <%= f.submit "Sign in!", class: 'ui large teal fluid submit button ' %>
+              </div>
+            </div>
+        <% end %>
+        <br>
+        <% if @form.errors.present? %>
+            <ul>
+              <% @form.errors.messages.each_with_index do |error_message, i| %>
+                  <% if error_message[1].size>0 %>
+                      <li><%= "#{error_message[0]}: #{error_message[1].join('; ')}" %></li>
+                  <% end %>
+              <% end %>
+            </ul>
+        <% end %>
+      </div>
+      <div class="column"></div>
+    </div>
+  </div>
+</div>
