@@ -8,17 +8,7 @@
 </head>
 <body>
 
-<div class="ui green inverted segment">
-  <div class="ui inverted secondary menu">
-    <a class="active item">
-      WeatherApp
-    </a>
-    <div class="right item">
-      <%= link_to 'Log In', sessions_sign_in_path, class: 'ui item button'%>
-      <%= link_to 'Sign Up', sessions_sign_up_path, class: 'ui item button'%>
-    </div>
-  </div>
-</div>
+<%= concept("menu/cell/main_panel", nil, {logged_in: logged_in?, current_user: current_user}) %>
 
 <%= yield %>
 

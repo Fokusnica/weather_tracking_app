@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   post 'sign_in' => 'sessions#sign_in'
 
   get 'sessions/sign_out'
+  get 'index' => 'welcome#index'
 end

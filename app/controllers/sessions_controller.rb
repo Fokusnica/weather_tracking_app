@@ -21,8 +21,8 @@ class SessionsController < ApplicationController
 
   def sign_in
     run Session::SignIn do |op|
-      auto_login(op.model, op.contract.remember)
-      # return redirect_to monitors_path
+      auto_login(op.model)
+      return redirect_to index_path
     end
 
     render action: :sign_in_form
@@ -31,7 +31,7 @@ class SessionsController < ApplicationController
   def sign_out
     run Session::SignOut do
       logout
-      # redirect_to home_path
+      redirect_to index_path
     end
   end
 end
