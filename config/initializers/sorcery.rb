@@ -33,14 +33,14 @@ Rails.application.config.sorcery.configure do |config|
   # config.remember_me_httponly =
 
 
-  # -- session timeout --
-  # How long in seconds to keep the session alive.
+  # -- sessions timeout --
+  # How long in seconds to keep the sessions alive.
   # Default: `3600`
   #
   # config.session_timeout =
 
 
-  # Use the last action as the beginning of session timeout.
+  # Use the last action as the beginning of sessions timeout.
   # Default: `false`
   #
   # config.session_timeout_from_last_action =
@@ -248,7 +248,7 @@ Rails.application.config.sorcery.configure do |config|
 
 
     # -- remember_me --
-    # How long in seconds the session length will be
+    # How long in seconds the sessions length will be
     # Default: `604800`
     #
     # user.remember_me_for =

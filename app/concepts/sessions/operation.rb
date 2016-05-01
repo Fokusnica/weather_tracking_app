@@ -21,7 +21,7 @@ module Session
     end
 
     def process(params)
-      validate(params[:session]) do |contract|
+      validate(params[:sessions]) do |contract|
         @model = contract.user
       end
     end

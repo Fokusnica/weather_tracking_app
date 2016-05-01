@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   get 'sessions/sign_out'
   get 'index' => 'welcome#index'
+  resources :settings
 end
