@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-    get_graph_data
+    get_graph_data if current_user && current_user.city
   end
 
   def get_graph_data
