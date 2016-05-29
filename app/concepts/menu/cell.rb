@@ -33,17 +33,13 @@ class Menu::Cell < Cell::Concept
     class SignedIn < MainPanel
       def setup!(model, options)
         current_user = options[:current_user]
+        city = current_user.city.present? ? current_user.city : nil
         @elements = [
-            # {
-            #     name: 'Dashboard',
-            #     path: dashboard_path,
-            #     class: "#{active_class('monitors')} item"
-            # },
-            # {
-            #     name: 'Profile',
-            #     path: users_edit_path(id: current_user.id),
-            #     class: "#{active_class('users')} item"
-            # },
+            {
+                name: city.present? ? 'Change City' : 'Add City',
+                path: city.present? ? edit_city_path(city) : new_city_path,
+                class: 'item'
+            },
             {
                 name: "Log Out (#{current_user.email})",
                 path: sessions_sign_out_path,

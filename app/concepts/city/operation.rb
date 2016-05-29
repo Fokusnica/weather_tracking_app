@@ -15,4 +15,26 @@ module Cities
       GetWeatherForecastJob.perform_now(@model)
     end
   end
+
+  class Update < Create
+    action :update
+
+    def process(params)
+      validate(params) do |f|
+        if f.changed?('city_name')
+          reset_weather
+        end
+        f.save
+      end
+      GetWeatherForecastJob.perform_now(@model)
+    end
+
+    private
+
+    def reset_weather
+      Weather.where(city_id: @model.id).delete_all
+    end
+  end
+
+
 end

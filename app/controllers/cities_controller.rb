@@ -13,6 +13,19 @@ class CitiesController < ApplicationController
     render action: :new
   end
 
+  def edit
+    form(Cities::Update, params: {id: params[:id], user: current_user })
+    render action: :edit
+  end
+
+  def update
+    run Cities::Update, params: params['city'].merge(id: current_user.city.id) do |op|
+      flash[:success] = 'Your city was successfully updated!'
+      return redirect_to root_path
+    end
+    flash.now[:error] = @form.errors.full_messages
+    render action: :edit
+  end
   def index
   end
 

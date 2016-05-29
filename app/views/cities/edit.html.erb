@@ -1,0 +1,25 @@
+<div class="ui container">
+  <h2 class="ui green header centered"> Add city</h2>
+  <%= form_for @form, url:  city_update_url, id: @form.model.id, method: :patch,  html: {class: 'ui large form'} do |f| %>
+      <div class="ui container">
+        <div class="field ui left input fluid">
+          <%= f.text_field :city_name, placeholder: 'City'  %>
+        </div>
+        <div class="field ui left input fluid">
+          <%= f.hidden_field :user_id, :value => current_user.id %>
+        </div>
+        <div>
+          <%= f.submit 'Save', class: 'ui large green fluid submit button ' %>
+        </div>
+      </div>
+  <% end %>
+  <% if @form.errors.present? %>
+      <ul>
+        <% @form.errors.messages.each_with_index do |error_message, i| %>
+            <% if error_message[1].size>0 %>
+                <li><%= "#{error_message[0]}: #{error_message[1].join('; ')}" %></li>
+            <% end %>
+        <% end %>
+      </ul>
+  <% end %>
+</div>

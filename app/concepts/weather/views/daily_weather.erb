@@ -1,6 +1,5 @@
 <p>Daily weather</p>
 <p>City: <%= options[:city].city_name%></p>
-
 <div class="ui grid">
   <div class="eight wide column">
     <%= concept('weather/cell/weather_table', nil, {weather_array: @weather_array}) %>

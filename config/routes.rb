@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get 'index' => 'welcome#index'
   resources :cities
   root 'welcome#index'
+  patch 'city_update' => 'cities#update', as: 'city_update'
 end
