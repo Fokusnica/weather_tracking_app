@@ -1,0 +1,8 @@
+<div class="ui grid">
+  <%@weather_array.each do |weather|%>
+      <div class="four wide column">
+        <%= concept('weather/cell/weather_table_part', nil, {weather: weather}) %>
+      </div>
+  <%end%>
+</div>
+

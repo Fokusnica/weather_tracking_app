@@ -5,13 +5,14 @@ module Cities
 
     contract do
       property :city_name
-      property :setting_id
+      property :user_id
     end
 
     def process(params)
       validate(params[:city]) do |f|
         f.save
       end
+      GetWeatherForecastJob.perform_now(@model)
     end
   end
 end

@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
   def sign_in
     run Session::SignIn do |op|
       auto_login(op.model)
-      return redirect_to index_path
+      return redirect_to root_path
     end
 
     render action: :sign_in_form

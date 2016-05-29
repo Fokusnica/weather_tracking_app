@@ -1,9 +1,9 @@
 <div class="ui container">
   <h2 class="ui green header centered"> Add city</h2>
-  <%= form_for @form, url: settings_url, method: :post,  html: {class: 'ui large form'} do |f| %>
+  <%= form_for @form, url: cities_url, method: :post,  html: {class: 'ui large form'} do |f| %>
       <div class="ui container">
         <div class="field ui left input fluid">
-          <%= f.text_field :city, placeholder: 'City'  %>
+          <%= f.text_field :city_name, placeholder: 'City'  %>
         </div>
         <div class="field ui left input fluid">
           <%= f.hidden_field :user_id, :value => current_user.id %>

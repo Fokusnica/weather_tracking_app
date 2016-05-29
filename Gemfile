@@ -7,6 +7,12 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'turbolinks'
+gem 'rest-client'
+gem 'delayed_job_active_record'
+gem 'clockwork', '~> 1.2'
+gem 'semantic-ui-sass'
+gem 'sorcery'
+gem 'figaro'
 
 group :development, :test do
   gem 'better_errors', '~> 2.1', '>= 2.1.1'
@@ -20,12 +26,6 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
-
-gem 'semantic-ui-sass'
-gem 'sorcery'
-# gem 'rest-client', '~> 1.8'
-# gem 'gon', '~> 6.0', '>= 6.0.1'
-
 
 #trailblazer part
 gem 'trailblazer'

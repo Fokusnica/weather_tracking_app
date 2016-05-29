@@ -11,24 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160501181500) do
+ActiveRecord::Schema.define(version: 20160526132401) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cities", force: :cascade do |t|
-    t.integer  "setting_id"
     t.string   "city_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
-  create_table "settings", force: :cascade do |t|
-    t.integer  "user_id"
-    t.boolean  "notifications"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+  create_table "delayed_jobs", force: :cascade do |t|
+    t.integer  "priority",   default: 0, null: false
+    t.integer  "attempts",   default: 0, null: false
+    t.text     "handler",                null: false
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
+
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",            null: false
@@ -41,5 +50,20 @@ ActiveRecord::Schema.define(version: 20160501181500) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+
+  create_table "weathers", force: :cascade do |t|
+    t.integer  "city_id"
+    t.datetime "time"
+    t.float    "current_temperature"
+    t.float    "pressure"
+    t.float    "humidity"
+    t.float    "wind_speed"
+    t.float    "wind_direction"
+    t.float    "cloudiness"
+    t.string   "description"
+    t.string   "icon"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
 
 end

@@ -1,0 +1,53 @@
+//weather_table_part
+.datetime_style {
+  font-size: small;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.main_div{
+  float: left;
+  width: 130px;
+}
+
+.image_temp_div{
+  display: block;
+  clear: left;
+}
+
+.float_div{
+  float: left;
+}
+
+.weather_icon {
+  border: medium none;
+  width: 45px;
+  height: 45px;
+}
+
+.temperature_div{
+  display: block;
+  clear: left;
+  font-size: medium;
+  font-weight: bold;
+  padding: 0pt 3pt;
+}
+
+.after_temp_div{
+  display: block;
+  width: 85px;
+  overflow: visible;
+}
+
+.clouds_div{
+  display: block;
+  clear: left;
+  font-size: small;
+}
+
+.weather_params{
+  display: block;
+  clear: left;
+  color: gray;
+  font-size: x-small;
+}

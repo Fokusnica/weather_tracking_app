@@ -1,0 +1,18 @@
+<div>
+  <div class="datetime_style"><%=(@weather.time.localtime).strftime('%b %e, %l:%M %p')%></div>
+  <div class="main_div">
+    <div class="image_temp_div">
+      <div class="float_div">
+        <img class="weather_icon" style="background: url(<%="http://openweathermap.org/img/w/#{@weather.icon}.png"%>) repeat scroll 0% 0% transparent;" alt="title" src="http://openweathermap.org/images/transparent.png">
+      </div>
+      <div class="float_div">
+        <div class="temperature_div" title="Current Temperature"><%= @weather.current_temperature%>°C</div>
+        <div class="after_temp_div"></div>
+      </div>
+    </div>
+    <div class="clouds_div">Clouds: <%= @weather.cloudiness%>%</div>
+    <div class="weather_params">Humidity: <%= @weather.humidity%>%</div>
+    <div class="weather_params">Wind: <%= @weather.wind_speed%> m/s</div>
+    <div class="weather_params">Pressure: <%= @weather.pressure%>hpa</div>
+  </div>
+</div>

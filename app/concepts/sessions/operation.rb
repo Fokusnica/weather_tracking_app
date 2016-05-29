@@ -2,7 +2,6 @@ module Session
   class SignIn < Trailblazer::Operation
     contract do
       attr_reader :user
-
       property :email, virtual: true
       property :password, virtual: true
       validates :email, :password, presence: true
@@ -21,7 +20,7 @@ module Session
     end
 
     def process(params)
-      validate(params[:sessions]) do |contract|
+      validate(params[:session]) do |contract|
         @model = contract.user
       end
     end
