@@ -26,4 +26,14 @@ class Weather::Cell < Cell::Concept
       render(:weather_table_part)
     end
   end
+
+  class WeatherGraph < Cell::Concept
+    inherit_views Weather::Cell
+
+    def show
+      @weather_array = options[:weather_array]
+
+      render(:weather_graph)
+    end
+  end
 end

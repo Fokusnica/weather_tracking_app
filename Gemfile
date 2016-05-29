@@ -13,6 +13,7 @@ gem 'clockwork', '~> 1.2'
 gem 'semantic-ui-sass'
 gem 'sorcery'
 gem 'figaro'
+gem 'gon', '~> 6.0', '>= 6.0.1'
 
 group :development, :test do
   gem 'better_errors', '~> 2.1', '>= 2.1.1'
