@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
+  skip_before_action :require_login, only: [:index]
   def index
     if current_user.present?
       if current_user.city.present?
