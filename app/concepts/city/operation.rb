@@ -12,7 +12,7 @@ module Cities
       validate(params[:city]) do |f|
         f.save
       end
-      GetWeatherForecastJob.perform_now(@model)
+      GetWeatherForecastJob.perform_later(@model)
     end
   end
 
@@ -26,7 +26,7 @@ module Cities
         end
         f.save
       end
-      GetWeatherForecastJob.perform_now(@model)
+      GetWeatherForecastJob.perform_later(@model)
     end
 
     private
