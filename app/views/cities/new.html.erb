@@ -1,5 +1,5 @@
 <div class="ui container">
-  <h2 class="ui green header centered"> Add city</h2>
+  <h2 class="ui header centered main_color"> Add city</h2>
   <%= form_for @form, url: cities_url, method: :post,  html: {class: 'ui large form'} do |f| %>
       <div class="ui container">
         <div class="field ui left input fluid">
@@ -9,7 +9,7 @@
           <%= f.hidden_field :user_id, :value => current_user.id %>
         </div>
         <div>
-          <%= f.submit 'Save', class: 'ui large green fluid submit button ' %>
+          <%= f.submit 'Save', class: 'ui large fluid submit button buttons_color' %>
         </div>
       </div>
   <% end %>

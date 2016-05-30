@@ -2,11 +2,14 @@
 @import "welcome";
 @import "weather";
 
-.site_name {
-  padding-left: 0 !important;
-  font-size: 30px;
-  &:hover {
-    background: none !important;
-  }
-  font-weight: bold !important;
+.main_header{
+  opacity: 0.8;
+}
+
+.main_color{
+  color: #36506b !important;
+}
+.buttons_color {
+  background-color: #36506b !important;
+  color: white !important;
 }

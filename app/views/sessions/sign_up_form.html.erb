@@ -3,7 +3,7 @@
     <div class="row">
       <div class="column"></div>
       <div class="column">
-        <h2 class="ui green header centered"> New user:</h2>
+        <h2 class="ui header centered main_color"> New user:</h2>
         <%= form_for(@form, url: sessions_sign_up_path, method: :post, html: {class: 'ui large form'}) do |f| %>
             <div class="ui container">
               <div class="field ui left icon input fluid">
@@ -27,7 +27,7 @@
                 <%= f.text_field :surname, placeholder: "Surname", label: false %>
               </div>
               <div>
-                <%= f.submit "Sign up!", class: 'ui large green fluid submit button ' %>
+                <%= f.submit "Sign up!", class: 'ui large buttons_color fluid submit button ' %>
               </div>
             </div>
         <% end %>

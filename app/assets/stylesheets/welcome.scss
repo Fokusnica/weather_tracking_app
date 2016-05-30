@@ -1,7 +1,11 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-//#welcome_page {
-//  background:url("http://libreshot.com/wp-content/uploads/2015/07/barometer.jpg");
-//  background-size: cover;
-//}
+#welcome_page {
+  //background:url("http://libreshot.com/wp-content/uploads/2015/07/barometer.jpg");
+  background-color: #C9CDD6;
+  background-size: cover;
+}
+.sign_up_message{
+  text-align: center;
+}

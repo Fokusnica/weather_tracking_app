@@ -9,7 +9,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body id="welcome_page">
-
 <%= concept("menu/cell/main_panel", nil, {logged_in: logged_in?, current_user: current_user}) %>
 
 <%= yield %>
